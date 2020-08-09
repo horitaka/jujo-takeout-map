@@ -17,11 +17,11 @@ try {
 
 module.exports = {
   siteMetadata: {
-    title: 'GCN',
+    title: '十条テイクアウトマップ',
     description:
-      'A starter template to build amazing static websites with Gatsby, Contentful and Netlify',
-    siteUrl: 'https://gcn.netlify.com',
-    image: '/images/share.jpg',
+      '東京都北区の十条・東十条近くのテイクアウトマップです。掲載しているお店やメニューの情報は日々更新中です！',
+    siteUrl: 'https://jujo-takeout.site',
+    image: '/images/share.png',
     menuLinks: [
       {
         name: 'Home',
@@ -36,8 +36,8 @@ module.exports = {
         slug: '/contact/',
       },
     ],
-    postsPerFirstPage: 7,
-    postsPerPage: 6,
+    postsPerFirstPage: 31,
+    postsPerPage: 30,
     basePath: '/',
   },
   plugins: [
