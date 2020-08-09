@@ -146,6 +146,17 @@ type ContentfulPost implements Node @derivedTypes @dontInfer {
   sys: ContentfulPostSys
   node_locale: String
   metaDescription: contentfulPostMetaDescriptionTextNode @link(by: "id", from: "metaDescription___NODE")
+  address: String
+  location: Location
+  phoneNumber: String
+  openingHours: String
+  homepage: String
+  tabelog: String
+}
+
+type Location {
+  lat: Float
+  lon: Float
 }
 
 type ContentfulAsset implements Node @derivedTypes @dontInfer {

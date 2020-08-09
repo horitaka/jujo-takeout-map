@@ -60,6 +60,15 @@ export const query = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       slug
+      address
+      location {
+        lat
+        lon
+      }
+      phoneNumber
+      openingHours
+      homepage
+      tabelog
       metaDescription {
         internal {
           content
