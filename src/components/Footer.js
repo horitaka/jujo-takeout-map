@@ -44,7 +44,7 @@ const Item = styled.li`
 const Footer = () => (
   <Wrapper>
     <List>
-      <Item>
+      {/* <Item>
         <a
           href="https://www.contentful.com/"
           rel="nofollow noopener noreferrer"
@@ -56,22 +56,16 @@ const Footer = () => (
             alt="Powered by Contentful"
           />
         </a>
-      </Item>
+      </Item> */}
       <Item>
-        <a
-          href="https://github.com/ryanwiemer/gatsby-starter-gcn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          gatsby-starter-gcn
-        </a>{' '}
+        十条・東十条テイクアウトマップ
         by{' '}
         <a
-          href="https://github.com/ryanwiemer"
+          href="https://twitter.com/jujotakeout"
           target="_blank"
           rel="noopener noreferrer"
         >
-          @ryanwiemer
+          @jujotakeout
         </a>
       </Item>
     </List>

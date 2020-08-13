@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import CardList from '../components/CardList'
 import Card from '../components/Card'
+import CardServiceLogo from '../components/CardServiceLogo'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
@@ -32,18 +33,18 @@ const Posts = ({ data, pageContext }) => {
       <Container>
         {isFirstPage ? (
           <CardList>
-            <Card {...featuredPost} featured basePath={basePath} />
+            <CardServiceLogo {...featuredPost} featured basePath={basePath} />
             {posts.slice(1).map(({ node: post }) => (
               <Card key={post.id} {...post} basePath={basePath} />
             ))}
           </CardList>
         ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} basePath={basePath} />
-            ))}
-          </CardList>
-        )}
+            <CardList>
+              {posts.map(({ node: post }) => (
+                <Card key={post.id} {...post} basePath={basePath} />
+              ))}
+            </CardList>
+          )}
       </Container>
       <Pagination context={pageContext} />
     </Layout>

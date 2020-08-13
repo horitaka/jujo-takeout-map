@@ -39,49 +39,18 @@ const Post = styled.li`
 `
 
 const StyledImg = styled(Img)`
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
 `
 
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
-`
 
-const Date = styled.h3`
-  margin: 0 1rem 0.5rem 1rem;
-  color: gray;
-`
 
-const ReadingTime = styled.h4`
-  margin: 0 1rem 1.5rem 1rem;
-  color: gray;
-`
-
-const Excerpt = styled.p`
-  margin: 0 1rem 1rem 1rem;
-  line-height: 1.6;
-`
-
-const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
+const CardServiceLogo = ({ slug, heroImage, title, publishDate, body, ...props }) => {
   return (
     <>
       {heroImage && body && (
         <Post featured={props.featured}>
-          <Link to={`${props.basePath}/${slug}/`}>
+          <Link to={`${props.basePath}/about/`}>
             <StyledImg fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
-            <Title>{title}</Title>
-            <Date>{publishDate}</Date>
-            {/* <ReadingTime>
-              {body.childMarkdownRemark.timeToRead} min read
-            </ReadingTime> */}
-            <Excerpt
-              dangerouslySetInnerHTML={{
-                __html: body.childMarkdownRemark.excerpt,
-              }}
-            />
           </Link>
         </Post>
       )}
@@ -89,4 +58,4 @@ const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
   )
 }
 
-export default Card
+export default CardServiceLogo
