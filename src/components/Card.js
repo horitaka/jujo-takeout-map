@@ -65,7 +65,12 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
-const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
+const Card = ({ slug, heroImage, title, publishDate, body, metaDescription, ...props }) => {
+
+  const description = metaDescription
+    ? metaDescription.metaDescription
+    : body.childMarkdownRemark.excerpt
+
   return (
     <>
       {heroImage && body && (
@@ -79,7 +84,7 @@ const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
             </ReadingTime> */}
             <Excerpt
               dangerouslySetInnerHTML={{
-                __html: body.childMarkdownRemark.excerpt,
+                __html: description,
               }}
             />
           </Link>

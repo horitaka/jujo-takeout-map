@@ -6,6 +6,7 @@ import Container from '../components/Container'
 import PageBody from '../components/PageBody'
 import PageShopMap from '../components/PageShopMap'
 import PageShopInfo from '../components/PageShopInfo'
+import ShareButtons from '../components/ShareButtons'
 import Divider from '../components/Divider'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
@@ -14,6 +15,7 @@ import SEO from '../components/SEO'
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
+    slug,
     title,
     metaDescription,
     heroImage,
@@ -61,6 +63,7 @@ const PostTemplate = ({ data, pageContext }) => {
         <PageShopMap location={location} />
         <Divider />
         <PageShopInfo shop={title} address={address} location={location} phoneNumber={phoneNumber} openingHours={openingHours} homepage={homepage} tabelog={tabelog} />
+        <ShareButtons shop={title} path={slug} />
       </Container>
       <PostLinks previous={previous} next={next} basePath={basePath} />
     </Layout>
