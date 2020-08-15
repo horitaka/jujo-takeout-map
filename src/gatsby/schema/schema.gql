@@ -149,7 +149,7 @@ type ContentfulPost implements Node @derivedTypes @dontInfer {
   address: String
   location: Location
   phoneNumber: String
-  openingHours: String
+  openingHours: [String]
   homepage: String
   tabelog: String
 }

@@ -94,6 +94,10 @@ const Body = styled.div`
       background: inherit !important;
     }
   }
+
+  img {
+    border-radius: 20px;
+  }
 `
 
 const PageBody = props => {

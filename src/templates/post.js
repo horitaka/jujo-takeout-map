@@ -4,6 +4,9 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
+import PageShopMap from '../components/PageShopMap'
+import PageShopInfo from '../components/PageShopInfo'
+import Divider from '../components/Divider'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDetails from '../components/PostDetails'
@@ -17,6 +20,12 @@ const PostTemplate = ({ data, pageContext }) => {
     body,
     publishDate,
     tags,
+    address,
+    location,
+    phoneNumber,
+    openingHours,
+    homepage,
+    tabelog,
   } = data.contentfulPost
 
   const previous = pageContext.prev
@@ -49,6 +58,9 @@ const PostTemplate = ({ data, pageContext }) => {
           timeToRead={body.childMarkdownRemark.timeToRead}
         />
         <PageBody body={body} />
+        <PageShopMap location={location} />
+        <Divider />
+        <PageShopInfo shop={title} address={address} location={location} phoneNumber={phoneNumber} openingHours={openingHours} homepage={homepage} tabelog={tabelog} />
       </Container>
       <PostLinks previous={previous} next={next} basePath={basePath} />
     </Layout>
