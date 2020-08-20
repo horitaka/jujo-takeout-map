@@ -1,21 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer } from 'react-leaflet'
 
 import Leaflet from 'leaflet'
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css';
 Leaflet.Icon.Default.imagePath =
   '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/'
 
 import MapMarker from './MapMarker'
-import MapMapker from './MapMarker';
 
-// 2. mapのサイズを決める
 const MapContainer = styled.div`
   width: 100%;
   height: 600px;
 `
-
 
 const ShopListMap = props => {
   const { posts, basePath } = props
@@ -37,7 +34,7 @@ const ShopListMap = props => {
             const img = post.node.heroImage.mapThumbnail.src
             return (
               post.node.location &&
-              <MapMapker key={post.node.id} position={[location.lat, location.lon]} shop={shop} img={img} link={`${basePath}/${slug}/`} />
+              <MapMarker key={post.node.id} position={[location.lat, location.lon]} shop={shop} img={img} link={`${basePath}/${slug}/`} />
             )
           })
         }

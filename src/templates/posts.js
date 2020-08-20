@@ -40,6 +40,9 @@ const Posts = ({ data, pageContext }) => {
                 <Card key={post.id} {...post} basePath={basePath} />
               ))}
             </CardList>
+            {
+              (typeof window !== 'undefined') && <ShopListMap posts={posts} basePath={basePath} />
+            }
             <ShopListMap posts={posts} basePath={basePath} />
           </>
         ) : (
