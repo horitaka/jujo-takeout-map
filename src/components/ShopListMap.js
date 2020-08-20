@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Map, TileLayer } from 'react-leaflet'
 
@@ -10,17 +10,25 @@ import MapMarker from './MapMarker'
 
 const MapContainer = styled.div`
   width: 100%;
-  height: 600px;
+  height: 500px;
 `
 
 const ShopListMap = props => {
   const { posts, basePath } = props
+  const mapRef = React.useRef(null);
 
-  const position = [35.760255, 139.7222794]
+  const position = [35.76144, 139.7222794]
+  // 35.76144,139.7224
+  useEffect(() => {
+    const map = mapRef.current.leafletElement;
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 250);
+  })
 
   return (
     <MapContainer>
-      <Map center={position} zoom={16}>
+      <Map center={position} zoom={16} ref={mapRef}>
         <TileLayer
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

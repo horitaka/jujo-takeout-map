@@ -82,8 +82,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'GCN',
-        short_name: 'GCN',
+        name: '十条テイクアウトマップ',
+        short_name: '十条テイクアウトマップ',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
