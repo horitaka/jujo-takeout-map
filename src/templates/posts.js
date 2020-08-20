@@ -43,7 +43,6 @@ const Posts = ({ data, pageContext }) => {
             {
               (typeof window !== 'undefined') && <ShopListMap posts={posts} basePath={basePath} />
             }
-            <ShopListMap posts={posts} basePath={basePath} />
           </>
         ) : (
             <CardList>

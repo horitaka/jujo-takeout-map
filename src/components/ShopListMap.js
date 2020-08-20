@@ -2,10 +2,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Map, TileLayer } from 'react-leaflet'
 
-import Leaflet from 'leaflet'
+// import Leaflet from 'leaflet'
 // import 'leaflet/dist/leaflet.css';
-Leaflet.Icon.Default.imagePath =
-  '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/'
+// Leaflet.Icon.Default.imagePath = '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/'
 
 import MapMarker from './MapMarker'
 

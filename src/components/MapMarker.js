@@ -5,6 +5,7 @@ import { Marker, Popup } from 'react-leaflet'
 
 const PopupContainer = styled.div`
   width: 300px;
+  height: 200px;
 `
 
 const MapMapker = props => {
