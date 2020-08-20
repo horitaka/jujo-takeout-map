@@ -6,6 +6,7 @@ import Card from '../components/Card'
 import CardServiceLogo from '../components/CardServiceLogo'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
+import ShopListMap from '../components/ShopListMap'
 import SEO from '../components/SEO'
 import { startCase } from 'lodash'
 
@@ -32,12 +33,15 @@ const Posts = ({ data, pageContext }) => {
       <SEO title={startCase(basePath)} image={ogImage} />
       <Container>
         {isFirstPage ? (
-          <CardList>
-            <CardServiceLogo {...featuredPost} featured basePath={basePath} />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} basePath={basePath} />
-            ))}
-          </CardList>
+          <>
+            <CardList>
+              <CardServiceLogo {...featuredPost} featured basePath={basePath} />
+              {posts.slice(1).map(({ node: post }) => (
+                <Card key={post.id} {...post} basePath={basePath} />
+              ))}
+            </CardList>
+            <ShopListMap posts={posts} basePath={basePath} />
+          </>
         ) : (
             <CardList>
               {posts.map(({ node: post }) => (
@@ -64,6 +68,10 @@ export const query = graphql`
           id
           slug
           publishDate(formatString: "MMMM DD, YYYY")
+          location {
+            lat
+            lon
+          }
           heroImage {
             title
             fluid(maxWidth: 1800) {

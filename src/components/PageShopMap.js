@@ -22,7 +22,7 @@ const PageShopMap = props => {
   const mapUrl = `https://maps.google.com/maps?output=embed&q=${location.lat},${location.lon}&t=m&hl=ja&z=16`
   return (
     <MapContainer>
-      <iframe src={mapUrl} style={mapStyle} allowfullscreen=""></iframe>
+      <iframe src={mapUrl} style={mapStyle} allowFullScreen=""></iframe>
     </MapContainer>
   )
 }

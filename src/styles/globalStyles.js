@@ -207,4 +207,9 @@ export const globalStyles = css`
   body:not(.user-is-tabbing) a:focus {
     outline: none;
   }
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
 `
