@@ -18,22 +18,10 @@ const MapContainer = styled.div`
 
 
 const ShopListMap = props => {
-  // 3. propsでshopの情報を受取るようにする
   const { posts, basePath } = props
 
-  // 4. shoplistのMarkerを作る
+  const position = [35.760255, 139.7222794]
 
-  // 5. shoplistのpopupを作る
-
-  // 1.leafletのsimplemap markerを追加する
-  const center = {
-    lat: 35.760255,
-    lng: 139.7222794,
-  }
-
-
-  const position = [center.lat, center.lng]
-  console.log(posts)
   return (
     <MapContainer>
       <Map center={position} zoom={16}>
@@ -46,14 +34,13 @@ const ShopListMap = props => {
             const location = post.node.location
             const shop = post.node.title
             const slug = post.node.slug
-            const img = null
+            const img = post.node.heroImage.mapThumbnail.src
             return (
               post.node.location &&
               <MapMapker key={post.node.id} position={[location.lat, location.lon]} shop={shop} img={img} link={`${basePath}/${slug}/`} />
             )
           })
         }
-        <MapMarker position={position} />
       </Map>
 
     </MapContainer>

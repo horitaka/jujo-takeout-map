@@ -80,6 +80,9 @@ export const query = graphql`
             ogimg: resize(width: 1800) {
               src
             }
+            mapThumbnail: resize(width: 300) {
+              src
+            }
           }
           metaDescription {
             metaDescription

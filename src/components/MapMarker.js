@@ -3,8 +3,9 @@ import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { Marker, Popup } from 'react-leaflet'
 
-// const Link = styled.a`
-// `
+const PopupContainer = styled.div`
+  width: 300px;
+`
 
 const MapMapker = props => {
   const { position, shop, link, img } = props
@@ -12,9 +13,11 @@ const MapMapker = props => {
   return (
     <Marker position={position}>
       <Popup>
-        <Link to={link}>
-          {shop} <br /> Easily customizable.
-        </Link>
+        <PopupContainer>
+          <Link to={link}>
+            {shop} <br /> <img src={img} />
+          </Link>
+        </PopupContainer>
       </Popup>
     </Marker>
   )
