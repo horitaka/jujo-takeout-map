@@ -20,7 +20,7 @@ const SEO = ({ title, description, image }) => {
 
   const defaultImage = site.siteMetadata.siteUrl + site.siteMetadata.image
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image || defaultImage
+  const metaImage = `https:${image}` || defaultImage
 
   return (
     <Helmet
@@ -34,7 +34,7 @@ const SEO = ({ title, description, image }) => {
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* General tags */}
-      <meta name="image" content={image} />
+      <meta name="image" content={`https:${image}`} />
       <meta name="description" content={metaDescription} />
 
       {/* OpenGraph tags */}
