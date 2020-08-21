@@ -95,6 +95,10 @@ const Body = styled.div`
     }
   }
 
+  span {
+    border-radius: 20px;
+  }
+
   img {
     border-radius: 20px;
   }
