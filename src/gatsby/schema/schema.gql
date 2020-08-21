@@ -152,6 +152,7 @@ type ContentfulPost implements Node @derivedTypes @dontInfer {
   openingHours: [String]
   homepage: String
   tabelog: String
+  googleMapUrl: String
 }
 
 type Location {

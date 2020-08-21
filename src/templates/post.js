@@ -28,6 +28,7 @@ const PostTemplate = ({ data, pageContext }) => {
     openingHours,
     homepage,
     tabelog,
+    googleMapUrl,
   } = data.contentfulPost
 
   const previous = pageContext.prev
@@ -60,7 +61,7 @@ const PostTemplate = ({ data, pageContext }) => {
           timeToRead={body.childMarkdownRemark.timeToRead}
         />
         <PageBody body={body} />
-        <PageShopMap location={location} />
+        <PageShopMap location={location} googleMapUrl={googleMapUrl} />
         <Divider />
         <PageShopInfo shop={title} address={address} location={location} phoneNumber={phoneNumber} openingHours={openingHours} homepage={homepage} tabelog={tabelog} />
         <ShareButtons shop={title} path={slug} />
@@ -75,15 +76,6 @@ export const query = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       slug
-      address
-      location {
-        lat
-        lon
-      }
-      phoneNumber
-      openingHours
-      homepage
-      tabelog
       metaDescription {
         internal {
           content
@@ -112,6 +104,16 @@ export const query = graphql`
           excerpt(pruneLength: 320)
         }
       }
+      address
+      location {
+        lat
+        lon
+      }
+      phoneNumber
+      openingHours
+      homepage
+      tabelog
+      googleMapUrl
     }
   }
 `

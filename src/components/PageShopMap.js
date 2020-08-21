@@ -10,9 +10,9 @@ const MapContainer = styled.div`
 `
 
 const PageShopMap = props => {
-  const { location } = props
+  const { location, googleMapUrl } = props
 
-  if (!location) {
+  if (!location && !googleMapUrl) {
     return null
   }
 
@@ -23,10 +23,13 @@ const PageShopMap = props => {
     border: 0,
   }
 
-  const mapUrl = `https://maps.google.com/maps?output=embed&q=${location.lat},${location.lon}&t=m&hl=ja&z=16`
+  const mapUrl = googleMapUrl
+    ? googleMapUrl
+    : `https://maps.google.com/maps?output=embed&q=${location.lat},${location.lon}&t=m&hl=ja&z=16`
+
   return (
     <MapContainer>
-      <iframe src={mapUrl} style={mapStyle} allowFullScreen=""></iframe>
+      <iframe src={mapUrl} style={mapStyle} allowFullScreen="" ></iframe>
     </MapContainer>
   )
 }
