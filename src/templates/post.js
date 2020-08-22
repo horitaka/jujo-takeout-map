@@ -28,12 +28,13 @@ const PostTemplate = ({ data, pageContext }) => {
     openingHours,
     homepage,
     tabelog,
-    googleMapUrl,
+    googleMapUrl: googleMapUrlObject
   } = data.contentfulPost
 
   const previous = pageContext.prev
   const next = pageContext.next
   const { basePath } = pageContext
+  const googleMapUrl = googleMapUrlObject && googleMapUrlObject.googleMapUrl
 
   let ogImage
   try {
@@ -61,7 +62,7 @@ const PostTemplate = ({ data, pageContext }) => {
           timeToRead={body.childMarkdownRemark.timeToRead}
         />
         <PageBody body={body} />
-        <PageShopMap location={location} googleMapUrl={googleMapUrl.googleMapUrl} />
+        <PageShopMap location={location} googleMapUrl={googleMapUrl} />
         <Divider />
         <PageShopInfo shop={title} address={address} location={location} phoneNumber={phoneNumber} openingHours={openingHours} homepage={homepage} tabelog={tabelog} />
         <ShareButtons shop={title} path={slug} />
