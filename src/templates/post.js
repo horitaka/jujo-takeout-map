@@ -61,7 +61,7 @@ const PostTemplate = ({ data, pageContext }) => {
           timeToRead={body.childMarkdownRemark.timeToRead}
         />
         <PageBody body={body} />
-        <PageShopMap location={location} googleMapUrl={googleMapUrl} />
+        <PageShopMap location={location} googleMapUrl={googleMapUrl.googleMapUrl} />
         <Divider />
         <PageShopInfo shop={title} address={address} location={location} phoneNumber={phoneNumber} openingHours={openingHours} homepage={homepage} tabelog={tabelog} />
         <ShareButtons shop={title} path={slug} />
@@ -113,7 +113,9 @@ export const query = graphql`
       openingHours
       homepage
       tabelog
-      googleMapUrl
+      googleMapUrl {
+        googleMapUrl
+      }
     }
   }
 `

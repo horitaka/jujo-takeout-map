@@ -96,10 +96,14 @@ const Body = styled.div`
   }
 
   span {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
   }
 
   img {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
   }
 `
