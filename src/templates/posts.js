@@ -16,6 +16,7 @@ const Posts = ({ data, pageContext }) => {
   const isFirstPage = humanPageNumber === 1
   let featuredPost
   let ogImage
+  const title = data.site.siteMetadata.title
 
   try {
     featuredPost = posts[0].node
@@ -28,9 +29,10 @@ const Posts = ({ data, pageContext }) => {
     ogImage = null
   }
 
+  console.log(title)
   return (
     <Layout>
-      <SEO title={startCase(basePath)} image={ogImage} />
+      <SEO title={title} image={ogImage} />
       <Container>
         {isFirstPage ? (
           <>
@@ -97,6 +99,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
