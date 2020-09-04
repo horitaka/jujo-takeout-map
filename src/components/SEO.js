@@ -47,6 +47,7 @@ const SEO = ({ title, description, image }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:image" content={metaImage} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta name="google-site-verification" content="fEZfEsnKQNgPRtRYUoqrlh4EGLCV2GlDss5bQKagj_o" />
     </Helmet>
   )
 }

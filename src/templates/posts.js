@@ -29,7 +29,6 @@ const Posts = ({ data, pageContext }) => {
     ogImage = null
   }
 
-  console.log(title)
   return (
     <Layout>
       <SEO title={title} image={ogImage} />
